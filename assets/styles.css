@@ -112,11 +112,37 @@ img { display: block; max-width: 100%; }
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
 }
+/* Moving spotlight — brighter grid lines revealed under a travelling mask */
+.hero__spotlight {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.34) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.34) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(circle, #000 0%, rgba(0,0,0,.45) 34%, transparent 62%);
+          mask-image: radial-gradient(circle, #000 0%, rgba(0,0,0,.45) 34%, transparent 62%);
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: 560px 560px; mask-size: 560px 560px;
+  -webkit-mask-position: 50% 12%; mask-position: 50% 12%;
+  animation: gridSpot 17s ease-in-out infinite alternate;
+}
+@keyframes gridSpot {
+  0%   { -webkit-mask-position: 8% 6%;   mask-position: 8% 6%; }
+  50%  { -webkit-mask-position: 94% 26%; mask-position: 94% 26%; }
+  100% { -webkit-mask-position: 40% 2%;  mask-position: 40% 2%; }
+}
+
 .hero__glow {
-  position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+  position: absolute; top: -22%; left: 50%; margin-left: -450px;
   width: 900px; height: 600px; pointer-events: none;
   background: radial-gradient(circle, var(--red-glow), transparent 62%);
   filter: blur(30px); opacity: .55;
+  animation: glowDrift 20s ease-in-out infinite alternate;
+}
+@keyframes glowDrift {
+  0%   { transform: translate(-170px, -10px) scale(1); }
+  50%  { transform: translate(175px, 45px) scale(1.16); }
+  100% { transform: translate(-40px, 20px) scale(1.05); }
 }
 .hero__inner {
   position: relative; max-width: var(--max); margin: 0 auto;
