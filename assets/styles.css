@@ -159,9 +159,8 @@ img { display: block; max-width: 100%; }
   transition: transform .35s var(--ease), box-shadow .35s var(--ease);
   will-change: transform;
 }
-.hero__logo-btn:hover .hero__logo-img { transform: scale(1.06) rotate(-3deg); box-shadow: 0 30px 72px -16px var(--red-glow); }
-.hero__logo-btn:active .hero__logo-img { transform: scale(0.97); }
-.hero__logo-btn:hover .hero__logo-ring { opacity: 1; transform: scale(1.14); }
+.hero__logo-btn:hover .hero__logo-img { animation: logoShake .12s linear infinite; box-shadow: 0 18px 46px -12px rgba(255, 120, 0, 0.6); }
+.hero__logo-btn:hover .hero__logo-ring { opacity: 1; transform: scale(1.16); background: radial-gradient(circle, rgba(255, 130, 20, 0.5), transparent 66%); }
 .hero__logo-btn:focus-visible { outline: 2px solid var(--red); outline-offset: 10px; border-radius: 30px; }
 .hero__logo-btn.pop .hero__logo-img { animation: heroPop .7s var(--ease); }
 
@@ -172,6 +171,35 @@ img { display: block; max-width: 100%; }
   50%  { transform: scale(0.94) rotate(-7deg); }
   72%  { transform: scale(1.05) rotate(4deg); }
   100% { transform: scale(1) rotate(0); }
+}
+
+/* Hover = fire exhaust + revving shake, like it's about to take off */
+.hero__logo-fire {
+  position: absolute; left: 50%; bottom: -3%; transform: translateX(-50%);
+  display: flex; align-items: flex-end; justify-content: center; gap: .02em;
+  font-size: clamp(1.3rem, 3.4vw, 2.1rem); line-height: 1; z-index: 3;
+  pointer-events: none; opacity: 0; transition: opacity .2s ease;
+  filter: drop-shadow(0 0 8px rgba(255, 120, 0, 0.7));
+}
+.hero__logo-btn:hover .hero__logo-fire { opacity: 1; }
+.hero__logo-fire span { display: inline-block; transform-origin: 50% 100%; animation: flameFlicker .34s ease-in-out infinite; }
+.hero__logo-fire span:nth-child(1) { animation-duration: .30s; animation-delay: -.05s; }
+.hero__logo-fire span:nth-child(2) { animation-duration: .26s; animation-delay: -.12s; font-size: 1.25em; }
+.hero__logo-fire span:nth-child(3) { animation-duration: .20s; animation-delay: -.02s; font-size: 1.5em; }
+.hero__logo-fire span:nth-child(4) { animation-duration: .27s; animation-delay: -.15s; font-size: 1.25em; }
+.hero__logo-fire span:nth-child(5) { animation-duration: .31s; animation-delay: -.08s; }
+
+@keyframes flameFlicker {
+  0%, 100% { transform: translateY(0) scaleY(1) scaleX(1) rotate(-3deg); opacity: .85; }
+  50%      { transform: translateY(-7px) scaleY(1.28) scaleX(.9) rotate(3deg); opacity: 1; }
+}
+@keyframes logoShake {
+  0%   { transform: translateX(-3px) rotate(-2.2deg) scale(1.05); }
+  20%  { transform: translateX(3px)  rotate(2.2deg)  scale(1.06); }
+  40%  { transform: translateX(-2px) rotate(-1.6deg) scale(1.05); }
+  60%  { transform: translateX(3px)  rotate(1.8deg)  scale(1.06); }
+  80%  { transform: translateX(-3px) rotate(-1.4deg) scale(1.05); }
+  100% { transform: translateX(2px)  rotate(1.4deg)  scale(1.06); }
 }
 
 /* ---------- Trust strip ---------- */
