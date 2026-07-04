@@ -32,9 +32,9 @@
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="#services">Expertise</a>
-      <a href="#about">Founder</a>
       <a href="#team">Team</a>
       <a href="#clients">Clients</a>
+      <a href="#about">Founder</a>
       <a href="#community">Community</a>
       <a href="#contact" class="nav__cta">Get in touch</a>
     </nav>
@@ -51,24 +51,32 @@
   <div class="hero__grid" aria-hidden="true"></div>
   <div class="hero__glow" aria-hidden="true"></div>
   <div class="hero__inner">
-    <p class="hero__eyebrow">Boutique technology consultancy · United Kingdom</p>
-    <h1 class="hero__title">
-      Classic training,<br /><span class="accent">made modern.</span>
-    </h1>
-    <p class="hero__lead">
-      JP Mentors helps organisations understand and adopt the technologies shaping the next decade —
-      <strong>virtual reality, haptics, robotics and artificial intelligence</strong> — with the human craft of
-      great training and consultancy at its core.
-    </p>
-    <div class="hero__actions">
-      <a href="#services" class="btn btn--primary">Explore our expertise</a>
-      <a href="#community" class="btn btn--ghost">Play the game ⚽</a>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Boutique technology consultancy · United Kingdom</p>
+      <h1 class="hero__title">
+        Classic training,<br /><span class="accent">made modern.</span>
+      </h1>
+      <p class="hero__lead">
+        JP Mentors helps organisations understand and adopt the technologies shaping the next decade —
+        <strong>virtual reality, haptics, robotics and artificial intelligence</strong> — with the human craft of
+        great training and consultancy at its core.
+      </p>
+      <div class="hero__actions">
+        <a href="#services" class="btn btn--primary">Explore our expertise</a>
+        <a href="#community" class="btn btn--ghost">Play the game ⚽</a>
+      </div>
+      <ul class="hero__stats">
+        <li><strong>2017</strong><span>Founded in the UK</span></li>
+      </ul>
     </div>
-    <ul class="hero__stats">
-      <li><strong>2017</strong><span>Founded in the UK</span></li>
-      <li><strong>4</strong><span>Frontier technologies</span></li>
-      <li><strong>MBE</strong><span>Award-winning leadership</span></li>
-    </ul>
+    <div class="hero__logo-wrap">
+      <button type="button" class="hero__logo-btn" id="heroLogo" aria-label="Bounce the JP Mentors logo">
+        <span class="hero__logo-ring" aria-hidden="true"></span>
+        <span class="hero__logo-float">
+          <img src="assets/img/logo.png" alt="JP Mentors logo" class="hero__logo-img" />
+        </span>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -132,40 +140,6 @@
   </div>
 </section>
 
-<!-- ===== About / Founder ===== -->
-<section class="founder" id="about">
-  <div class="founder__inner">
-    <div class="founder__media">
-      <img src="assets/img/james.jpg" alt="James Markey MBE, founder of JP Mentors" />
-      <div class="founder__badge">MBE</div>
-    </div>
-    <div class="founder__body">
-      <p class="eyebrow">The founder</p>
-      <h2>James Markey <span class="mbe">MBE</span></h2>
-      <p class="founder__role">Founder &amp; Principal Consultant</p>
-      <p>
-        James founded JP Mentors in November 2017 to bring world-class training and technology consultancy to
-        organisations of every size. An award-winning technologist and entrepreneur, he has pioneered the use of
-        virtual reality and haptics in professional training — including the world's first portable haptic and VR
-        dental simulator, now used to train clinicians across dozens of universities.
-      </p>
-      <p>
-        Recognised with an <strong>MBE</strong> for his contribution to technology and training, James blends the
-        discipline of classic mentorship with a restless curiosity for what comes next in VR, haptics, robotics
-        and AI.
-      </p>
-      <div class="founder__links">
-        <a href="https://www.jamesmarkey.co.uk" target="_blank" rel="noopener" class="btn btn--outline">
-          jamesmarkey.co.uk ↗
-        </a>
-        <a href="https://find-and-update.company-information.service.gov.uk/company/11077479" target="_blank" rel="noopener" class="link-muted">
-          Companies House &middot; 11077479 ↗
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== Team ===== -->
 <section class="section" id="team">
   <div class="section__head">
@@ -219,6 +193,40 @@
   </div>
 </section>
 
+<!-- ===== About / Founder ===== -->
+<section class="founder" id="about">
+  <div class="founder__inner">
+    <div class="founder__media">
+      <img src="assets/img/james.jpg" alt="James Markey MBE, founder of JP Mentors" />
+      <div class="founder__badge">MBE</div>
+    </div>
+    <div class="founder__body">
+      <p class="eyebrow">The founder</p>
+      <h2>James Markey <span class="mbe">MBE</span></h2>
+      <p class="founder__role">Founder &amp; Principal Consultant</p>
+      <p>
+        James founded JP Mentors in November 2017 to bring world-class training and technology consultancy to
+        organisations of every size. An award-winning technologist and entrepreneur, he has pioneered the use of
+        virtual reality and haptics in professional training — including the world's first portable haptic and VR
+        dental simulator, now used to train clinicians across dozens of universities.
+      </p>
+      <p>
+        Recognised with an <strong>MBE</strong> for his contribution to technology and training, James blends the
+        discipline of classic mentorship with a restless curiosity for what comes next in VR, haptics, robotics
+        and AI.
+      </p>
+      <div class="founder__links">
+        <a href="https://www.jamesmarkey.co.uk" target="_blank" rel="noopener" class="btn btn--outline">
+          jamesmarkey.co.uk ↗
+        </a>
+        <a href="https://find-and-update.company-information.service.gov.uk/company/11077479" target="_blank" rel="noopener" class="link-muted">
+          Companies House &middot; 11077479 ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== Community / Football + Game ===== -->
 <section class="community" id="community">
   <div class="section__head section__head--light">
@@ -231,15 +239,20 @@
   </div>
 
   <div class="community__grid">
-    <figure class="community__photo">
-      <img src="assets/img/football-team.jpg" alt="The JP Mentors sponsored youth football team in their red kit" />
-      <figcaption>Our sponsored side in the famous red-and-black JP Mentors kit.</figcaption>
-    </figure>
+    <div class="game game--photo">
+      <div class="game__head">
+        <h3>🔴 On the pitch</h3>
+        <p>Our JP Mentors–sponsored youth side in the famous red-and-black kit.</p>
+      </div>
+      <figure class="community__photo">
+        <img src="assets/img/football-team.jpg" alt="The JP Mentors sponsored youth football team in their red kit" />
+      </figure>
+    </div>
 
     <div class="game">
       <div class="game__head">
-        <h3>⚽ JP Mentors Penalty Shootout</h3>
-        <p>Take your best shot. Pick a corner, set your power and beat the keeper. How many can you score?</p>
+        <h3>⚽ Penalty Shootout</h3>
+        <p>Pick a corner, load up the power, and try to beat the keeper.</p>
       </div>
       <div class="game__stage">
         <canvas id="footyGame" width="640" height="420" aria-label="Penalty shootout game"></canvas>

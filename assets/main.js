@@ -41,6 +41,18 @@
     reveals.forEach((el) => el.classList.add("in"));
   }
 
+  // Hero logo — "pop" bounce on click/tap (retriggerable)
+  const heroLogo = document.getElementById("heroLogo");
+  if (heroLogo) {
+    heroLogo.addEventListener("click", () => {
+      heroLogo.classList.remove("pop");
+      // force reflow so the animation can restart on rapid clicks
+      void heroLogo.offsetWidth;
+      heroLogo.classList.add("pop");
+    });
+    heroLogo.addEventListener("animationend", () => heroLogo.classList.remove("pop"));
+  }
+
   // Footer year
   const y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
