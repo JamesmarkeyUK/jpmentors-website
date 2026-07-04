@@ -180,7 +180,7 @@ img { display: block; max-width: 100%; }
 
 /* Hover = fire exhaust + revving shake, like it's about to take off */
 .hero__logo-fire {
-  position: absolute; left: 50%; bottom: -3%; transform: translateX(-50%);
+  position: absolute; left: 50%; bottom: -13%; transform: translateX(-50%) rotate(180deg);
   display: flex; align-items: flex-end; justify-content: center; gap: .02em;
   font-size: clamp(1.3rem, 3.4vw, 2.1rem); line-height: 1; z-index: 3;
   pointer-events: none; opacity: 0; transition: opacity .2s ease;
