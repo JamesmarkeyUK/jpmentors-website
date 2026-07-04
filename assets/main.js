@@ -44,13 +44,20 @@
   // Hero logo — "pop" bounce on click/tap (retriggerable)
   const heroLogo = document.getElementById("heroLogo");
   if (heroLogo) {
+    let launchTimer;
     heroLogo.addEventListener("click", () => {
+      // Fire + shake burst — makes the launch effect work on touch, where there's no hover
+      heroLogo.classList.add("launch");
+      clearTimeout(launchTimer);
+      launchTimer = setTimeout(() => heroLogo.classList.remove("launch"), 1000);
+      // Pop bounce
       heroLogo.classList.remove("pop");
-      // force reflow so the animation can restart on rapid clicks
-      void heroLogo.offsetWidth;
+      void heroLogo.offsetWidth; // reflow so rapid taps restart the animation
       heroLogo.classList.add("pop");
     });
-    heroLogo.addEventListener("animationend", () => heroLogo.classList.remove("pop"));
+    heroLogo.addEventListener("animationend", (e) => {
+      if (e.animationName === "heroPop") heroLogo.classList.remove("pop");
+    });
   }
 
   // Footer year
