@@ -1,0 +1,5 @@
+.DS_Store
+*.log
+
+# Source material (originals live locally; optimised copies are in assets/img)
+Resources/
