@@ -24,7 +24,7 @@
 
   // Reveal on scroll
   const reveals = document.querySelectorAll(
-    ".card, .member, .founder__inner, .clients__inner, .community__grid, .section__head, .contact__inner"
+    ".card, .member, .clients__inner, .community__grid, .section__head, .contact__inner"
   );
   reveals.forEach((el) => el.classList.add("reveal"));
   if ("IntersectionObserver" in window) {
