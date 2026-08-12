@@ -45,6 +45,13 @@
   const heroLogo = document.getElementById("heroLogo");
   if (heroLogo) {
     let launchTimer;
+
+    // On load, fire the exhaust for a couple of seconds so the effect gets noticed
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      heroLogo.classList.add("launch");
+      launchTimer = setTimeout(() => heroLogo.classList.remove("launch"), 2200);
+    }
+
     heroLogo.addEventListener("click", () => {
       // Fire + shake burst — makes the launch effect work on touch, where there's no hover
       heroLogo.classList.add("launch");
