@@ -46,10 +46,10 @@
   if (heroLogo) {
     let launchTimer;
 
-    // On load, fire the exhaust for a couple of seconds so the effect gets noticed
+    // On load, fire the exhaust briefly so the effect gets noticed
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       heroLogo.classList.add("launch");
-      launchTimer = setTimeout(() => heroLogo.classList.remove("launch"), 2200);
+      launchTimer = setTimeout(() => heroLogo.classList.remove("launch"), 1200);
     }
 
     heroLogo.addEventListener("click", () => {
